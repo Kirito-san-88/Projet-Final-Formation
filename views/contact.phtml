@@ -1,0 +1,48 @@
+<!--MAIN CONTENT-->
+<main class="container">
+
+    <section>
+        <div id="target">
+            <?php if (isset($error)): echo $error; endif?>
+        </div>
+        <form method="post" id="contact_form">
+            <fieldset>
+                <legend>Mes coordonnées</legend>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Ma demande</legend>
+                <div class="subject">
+                    <label for="subject-selector">Votre demande concerne :</label>
+                    <select name="subject" id="subject-selector">
+                        <?php foreach ($products as $product): ?>
+                            <option value="<?= htmlspecialchars($product['id_product']); ?>"><?= htmlspecialchars($product['name_product']); ?></option>
+                        <?php endforeach; ?>
+                        <option value="-1">Un Problème technique</option>
+                        <option value="-2">Autres...</option>
+
+                    </select>
+                </div>
+                <textarea name="message" placeholder="Votre message..."></textarea>
+                <div class="toolbar">
+                    <button type="submit" class="button" id="envoyer_contact">Envoyer</button>
+                </div>
+
+
+            </fieldset>
+            <div class="toolbar">
+
+                <a href="accueil" title="Retour accueil" class="more">Retour à nos annonces</a>
+            </div>
+
+        </form>
+    </section>
+    <script src="public/js/contactFetch.js"></script>
+
+</main>

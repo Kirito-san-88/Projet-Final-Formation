@@ -1,0 +1,31 @@
+<!--MAIN CONTENT-->
+<main class="container">
+
+    <section class="product">
+
+        <section class="product-detail">
+
+            <div class="product-name">
+
+                <h1><?= htmlspecialchars($product['name_product']) ?></h1>
+
+            </div>
+        </section>
+        <!-- Grid layout-->
+        <section class="grid-container">
+            <?php foreach ($productImageModel->getProductImages($productId) as $productImages): ?>
+                <img src="<?= htmlspecialchars($productImages['img']) ?>"
+                     alt="<?= htmlspecialchars($productImages['alt_img']) ?>"/>
+            <?php endforeach; ?>
+        </section>
+        <p><?= htmlspecialchars($product['description']) ?></p>
+        <p>Au prix de :&nbsp; <?= htmlspecialchars($product['prix']) ?>&nbsp;€</p>
+    </section>
+
+    <div class="toolbar">
+        <a href="contact" title="Page de contact" class="more">Nous contacter</a>
+
+        <a href="accueil" title="Retour accueil" class="more">Retour à nos annonces</a>
+    </div>
+
+</main>

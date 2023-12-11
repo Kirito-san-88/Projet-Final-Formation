@@ -1,0 +1,39 @@
+<main class="container">
+
+    <table class="admin-message">
+        <thead>
+        <tr>
+            <th colspan="6">Messages reçus</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Articles</th>
+            <th>Email client</th>
+            <th>Message</th>
+            <th>Repondre</th>
+            <th>Supprimer</th>
+        </tr>
+
+        <?php foreach ($contacts
+
+        as $contact): ?>
+        <tr>
+
+            <td><?= htmlspecialchars($contact['subject']); ?></td>
+            <td><?= htmlspecialchars($contact['email']); ?></td>
+            <td><?= htmlspecialchars($contact['message']); ?></td>
+            <td><a href="mailto:<?= htmlspecialchars($contact['email']); ?>" title="Repondre"><i
+                            class="fas fa-envelope"></i></a></td>
+            <td><a href="sup_message-<?= htmlspecialchars($contact['id_contact']) ?>"
+                   title="Supprimer"><i class="fas fa-trash-alt"></i></a></td>
+            <?php endforeach; ?>
+        </tr>
+        </tbody>
+    </table>
+    <div class="toolbar">
+        <button class="button"><a href="admin_product" title="Retour page produit admin">Retour</a></button>
+        <a class="button" href="deconnect.php" title="Se déconnecter">Se déconnecter</a>
+    </div>
+
+</main>

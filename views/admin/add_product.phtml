@@ -1,0 +1,78 @@
+<main class="container">
+    <form method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Nouvel article</legend>
+            <div class="field">
+                <label for="name">Nom du bien</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="field">
+                <label for="price">Prix</label>
+                <input type="text" name="price" id="price" max=2147483648 min=0>
+            </div>
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
+            </div>
+            <div class="field">
+                <label for="new">Nouveauté</label>
+                <div>
+                    <label for="new">Oui</label>
+                    <input type="radio" name="new" id="new" value="1">
+                </div>
+                <div>
+                    <label for="not-new">Non</label>
+                    <input type="radio" name="new" id="not-new" value="0">
+                </div>
+            </div>
+            <div class="field">
+                <label>Moderate</label>
+                <div>
+                    <label for="yes">Oui</label>
+                    <input type="radio" name="moderate" id="yes" value="1">
+                </div>
+                <div>
+                    <label for="no">Non</label>
+                    <input type="radio" name="moderate" id="no" value="0">
+                </div>
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Ajouter une image</legend>
+            <div class="field">
+                <label for="alt_img">Titre</label>
+                <input type="text" name="alt_img" id="alt_img">
+            </div>
+
+            <div class="field">
+                <label for="slider_auto">Slider auto</label>
+                <input type="checkbox" name="slider_auto" id="slider_auto">
+            </div>
+            <div class="field">
+                <label for="slider_manuel">Slider manuel</label>
+                <input type="checkbox" name="slider_manuel" id="slider_manuel">
+            </div>
+            <div class="field">
+                <label for="moderate">Moderate</label>
+                <input type="checkbox" name="moderate" id="moderate">
+            </div>
+
+            <input type="hidden" name="id_product" id="id_product" value="">
+
+
+            <div class="field">
+                <div>
+                    Envoyez ce fichier : <input name="userfile" type="file" required/>
+                </div>
+
+            </div>
+
+        </fieldset>
+        <div class="toolbar">
+            <button type="submit" class="button">Ajouter</button>
+            <button class="button"><a href="admin_product" title="Retour page produit admin">Retour</a></button>
+        </div>
+    </form>
+</main>

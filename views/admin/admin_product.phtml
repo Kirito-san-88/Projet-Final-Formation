@@ -1,0 +1,35 @@
+<main class="container">
+
+    <table class="admin-product">
+        <tr>
+            <th>Articles</th>
+            <th>Images</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+        <?php foreach ($productsForAdmin as $productForAdmin): ?>
+            <tr>
+                <td><?= htmlspecialchars($productForAdmin['name_product']) ?></td>
+                <td class="img">
+                    <?php foreach ($productImageModel->getProductImageForAdmin($productForAdmin["id_product"]) as $productImages): ?>
+
+                        <img src="<?= htmlspecialchars($productImages['img']) ?>">
+
+                    <?php endforeach; ?>
+                </td>
+                <td><a href="modify_product-<?= htmlspecialchars($productForAdmin['id_product']) ?>"
+                       title="Modifier produit"><i class="fas fa-edit"></i></a></td>
+                <td><a href="sup_product-<?= htmlspecialchars($productForAdmin['id_product']) ?>"
+                       title="Supprimer produit"><i class="fas fa-trash-alt"></i></a></td>
+            </tr>
+        <?php endforeach; ?>
+
+
+    </table>
+    <div class="toolbar">
+        <a class="button" href="add_product" title="Ajouter un article">Ajouter un article</a>
+        <a class="button" href="message_to_admin" title="Voir les messages">Voir les messages</a>
+        <a class="button" href="deconnect.php" title="Se déconnecter">Se déconnecter</a>
+    </div>
+
+</main>

@@ -1,0 +1,59 @@
+<!--main start-->
+<main class="container">
+    <h1>Nos annonces</h1>
+    <!--first section with slider auto-->
+    <section>
+        <div>
+            <ul class="slide-auto">
+                <!--Images homes-->
+                <?php foreach ($sliders as $slider): ?>
+                    <li class="fade"><img src="<?= htmlspecialchars($slider['img']) ?>"
+                                          alt="<?= htmlspecialchars($slider['alt_img']) ?>"></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </section>
+    <!--2nd section with manual sliders-->
+    <section>
+        <article class="flex">
+            <?php foreach ($products as $product): ?>
+                <div class="slide-manual">
+                    <h2><?= htmlspecialchars($product['name_product']) ?></h2>
+                    <div>
+                        <div class="prev">&lt;</div>
+                        <div class="next">&gt;</div>
+                    </div>
+                    <?php foreach ($productImageModel->getProductImageForSlider($product["id_product"]) as $productImages): ?>
+                        
+                        <img src="<?= htmlspecialchars($productImages['img']) ?>"
+                             alt="<?= htmlspecialchars($productImages['alt_img']) ?>"/>
+
+                    <?php endforeach; ?>
+                    <p class="description-limit"><?= htmlspecialchars($product['description']) ?></p>
+                    <a href="product-<?= $product['id_product'] ?>" class="more" title="En savoir plus">En savoir
+                        plus</a>
+                </div>
+            <?php endforeach; ?>
+        </article>
+    </section>
+    <!-- last section -->
+    <?php if ($productAppart): ?>
+    <section>
+        <article>
+            <div>
+                <h2><?= htmlspecialchars($productAppart['name_product']) ?></h2>
+                <img src="<?= htmlspecialchars($productAppart['img']) ?>"
+                     alt="<?= htmlspecialchars($productAppart['alt_img']) ?>"/>
+            </div>
+            <div>
+                <p class="description-limit"><?= htmlspecialchars($productAppart['description']) ?></p>
+                <a href="product-<?= htmlspecialchars($productAppart['id_product']) ?>" class="more"
+                   title="En savoir plus">En savoir plus</a>
+            </div>
+        </article>
+    </section>
+    <?php endif; ?>
+</main>
+<script src="public/js/slider.js"></script>
+<script src="public/js/main.js"></script>
+<!--main end-->

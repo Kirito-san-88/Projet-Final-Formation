@@ -1,0 +1,21 @@
+#suivi des liens symboliques
+Options +FollowSymlinks
+
+#activation du module de redirection
+RewriteEngine on
+
+#redirection, pour tout appel de admin alors on appelle la page 
+RewriteRule ^admin$  index.php?page=admin [L]
+RewriteRule ^admin_product$  index.php?page=admin_product [L]
+RewriteRule ^accueil$  index.php?page=accueil [L]
+RewriteRule ^product-([0-9]+)$  index.php?page=product&id=$1 [L]
+RewriteRule ^modify_product-([0-9]+)$  index.php?page=modify_product&id=$1 [L]
+RewriteRule ^news$  index.php?page=news [L]
+RewriteRule ^add_product$  index.php?page=add_product [L]
+RewriteRule ^add_product_image-([0-9]+)$  index.php?page=add_product_image&id=$1 [L]
+RewriteRule ^sup_product-([0-9]+)$  index.php?page=sup_product&id=$1 [L]
+RewriteRule ^sup_message-([0-9]+)$  index.php?page=sup_message&id=$1 [L]
+RewriteRule ^message_to_admin$  index.php?page=message_to_admin [L]
+RewriteRule ^contact$  index.php?page=contact [L]
+RewriteRule ^add_contact_fetch$  index.php?page=add_contact_fetch [L]
+RewriteRule ^deconnect$  index.php?page=deconnect [L]

@@ -1,0 +1,22 @@
+<main class="container">
+    <form method="POST">
+        <fieldset>
+            <legend>Mes Identifiants</legend>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Votre email">
+            </div>
+
+            <div class="field">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" placeholder="Votre password">
+            </div>
+        </fieldset>
+        <button type="submit" class="button">Valider</button>
+
+        <?php if (isset($error)) : ?> <strong><?= $error ?></strong><?php endif; ?>
+
+    </form>
+
+</main>

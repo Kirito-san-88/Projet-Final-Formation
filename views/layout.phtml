@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- meta-->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Site d'annonces immobilières"/>
+    <title>Immo-Bilier</title>
+    <!-- link for fonts etc.. -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Exo:ital@0;1&family=Sansita+Swashed:wght@300&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+            integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+            crossorigin="anonymous"
+    />
+    <link rel="icon" href="public/img/favicon.ico"/>
+    <!-- link for css-->
+    <link rel="stylesheet" href="public/css/normalize.css"/>
+    <link rel="stylesheet" href="public/css/theme.css"/>
+</head>
+<body>
+<!--header start-->
+<header>
+    <div class="container">
+        <div>
+            <h2 class="rotate-left">Immo</h2>
+            <a href="accueil" title="accueil">
+                <img
+                        class="logo"
+                        src="public/img/logo-mini.png"
+                        alt="Logo de Immo-Bilier"
+                />
+            </a>
+            <h2 class="rotate-right">Bilier</h2>
+        </div>
+        <!--nav link-->
+        <nav>
+            <div>
+                <a href="accueil" title="accueil"><i class="fas fa-home"></i>Accueil</a>
+                <a href="news" title="news"><i class="fas fa-star"></i>Nouveautés</a>
+                <a href="contact" title="contact"><i class="far fa-envelope"></i>Nous Contacter</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--header end-->
+
+<!-- template start-->
+<?php include $template; ?>
+<!-- template end-->
+
+<!--footer start-->
+<footer>
+    <div>
+        <div class="logo">
+            <a href="accueil" title="accueil">
+                <img
+                        class="logo"
+                        src="public/img/logo-mini.png"
+                        alt="Logo de Immo-Bilier"
+                />
+            </a>
+        </div>
+
+        <div class="social">
+            <h3>Suivez nous sur</h3>
+            <a href="https://www.facebook.com/" title="Facebook"
+            ><i class="fab fa-facebook"></i>Facebook</a
+            >
+            <a href="https://www.instagram.com/" title="Instagram"
+            ><i class="fab fa-instagram"></i>Instagram</a
+            >
+            <a href="https://www.pinterest.fr/" title="Pinterest"
+            ><i class="fab fa-pinterest"></i>Pinterest</a
+            >
+        </div>
+        <div>
+            <p>
+                Tous droits réservés.
+                <a
+                        href="https://fr.wikipedia.org/wiki/Copyright"
+                        target="_blank"
+                        title="Wikipedia de Copyright"
+                >Copyright</a
+                >
+                © 2020
+            </p>
+        </div>
+    </div>
+</footer>
+<!--footer end-->
+</body>
+</html>

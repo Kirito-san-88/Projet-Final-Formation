@@ -1,0 +1,41 @@
+<form enctype="multipart/form-data" method="post">
+    <fieldset>
+        <legend>Ajouter une image</legend>
+        <div class="field">
+            <label for="alt_img">Titre</label>
+            <input type="text" name="alt_img" id="alt_img">
+        </div>
+
+        <div class="field">
+            <label for="slider_auto">Slider auto</label>
+            <input type="checkbox" name="slider_auto" id="slider_auto">
+        </div>
+        <div class="field">
+            <label for="slider_manuel">Slider manuel</label>
+            <input type="checkbox" name="slider_manuel" id="slider_manuel">
+        </div>
+        <div class="field">
+            <label for="moderate">Moderate</label>
+            <input type="checkbox" name="moderate" id="moderate">
+        </div>
+
+        <input type="hidden" name="id_product" id="id_product" value="<?= $productId ?>">
+
+
+        <div class="field">
+            <div>
+                Envoyez ce fichier : <input name="userfile" type="file"/>
+            </div>
+
+        </div>
+
+        <div class="field">
+            <label>Valider l'envoi :</label>
+            <input class="button" type="submit"/>
+        </div>
+
+    </fieldset>
+    <div class="toolbar">
+        <a href="admin_product" title="Retour page produit admin" class="button">Retour</a>
+    </div>
+</form>

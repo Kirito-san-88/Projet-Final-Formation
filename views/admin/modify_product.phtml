@@ -1,0 +1,88 @@
+<main class="container">
+    <form method="POST">
+        <fieldset>
+            <legend>Biens</legend>
+
+            <div class="field">
+                <label for="name">Titre</label>
+                <input type="text" name="name"
+                       value="<?= htmlspecialchars($productsToModifyForAdmin['name_product']) ?>">
+            </div>
+
+            <div class="field">
+                <label for="price">Prix</label>
+                <input type="text" name="price" value="<?= htmlspecialchars($productsToModifyForAdmin['prix']) ?>">
+            </div>
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea
+                        name="description"><?= htmlspecialchars($productsToModifyForAdmin['description']) ?></textarea>
+            </div>
+            <div class="field">
+                <label for="new_product">Nouveauté</label>
+                <input type="checkbox"
+                       name="new_product" id="new_product" <?php if ($productsToModifyForAdmin['new_product']): ?> checked <?php endif; ?>>
+            </div>
+            <div class="field">
+                <label for="moderate">Modération</label>
+                <input type="checkbox"
+                       name="moderate" id="moderate" <?php if ($productsToModifyForAdmin['moderate']): ?> checked <?php endif; ?>>
+            </div>
+        </fieldset>
+
+
+        <?php if (isset($error)) : ?> <strong><?= $error ?></strong><?php endif; ?>
+
+        <?php foreach ($productImagesToModifyForAdmin as $productImageToModifyForAdmin): ?>
+            <fieldset>
+                <legend>Images du bien</legend>
+                <div class="field">
+                    <label for="img">Image</label>
+                    <div>
+                        <img src="<?= htmlspecialchars($productImageToModifyForAdmin['img']) ?>">
+                        <div class="field">
+                            <label for="alt_img_<?= $productImageToModifyForAdmin['id_img'] ?>">Alt
+                                image</label>
+                            <input type="text"
+                                   name="alt_img_<?= $productImageToModifyForAdmin['id_img'] ?>"
+                                   value="<?= htmlspecialchars($productImageToModifyForAdmin['alt_img']) ?>">
+                        </div>
+                        <div class="field">
+                            <label for="slider_auto_<?= $productImageToModifyForAdmin['id_img'] ?>">Slider auto</label>
+                            <input type="checkbox"
+                                   name="slider_auto_<?= $productImageToModifyForAdmin['id_img'] ?>" <?php if ($productImageToModifyForAdmin['slider_auto']): ?> checked <?php endif; ?>>
+                        </div>
+                        <div class="field">
+                            <label for="slider_manuel_<?= $productImageToModifyForAdmin['id_img'] ?>">Slider manuel</label>
+                            <input type="checkbox"
+                                   name="slider_manuel_<?= $productImageToModifyForAdmin['id_img'] ?>" <?php if ($productImageToModifyForAdmin['slider']): ?> checked <?php endif; ?>>
+                        </div>
+                        <div class="field">
+                            <label for="moderate_<?= $productImageToModifyForAdmin['id_img'] ?>">Moderate</label>
+                            <input type="checkbox"
+                                   name="moderate_<?= $productImageToModifyForAdmin['id_img'] ?>" <?php if ($productImageToModifyForAdmin['moderate']): ?> checked <?php endif; ?>>
+                        </div>
+                        <div class="field">
+                            <label for="suppr-<?= $productImageToModifyForAdmin['id_img'] ?>">Supprimer</label>
+                            <input type="checkbox"
+                                   name="suppr-<?= $productImageToModifyForAdmin['id_img'] ?>">
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+            </fieldset>
+        <?php endforeach; ?>
+        <div class="toolbar">
+            <button type="submit" class="button">Valider les modifications</button>
+            <button class="button"><a href="add_product_image-<?= htmlspecialchars($productId) ?>" title="Retour admin">Ajouter
+                    une image</a></button>
+            <a href="admin_product" title="Retour page produit admin" class="button">Retour</a>
+        </div>
+
+
+        <?php if (isset($error)) : ?> <strong><?= $error ?></strong><?php endif; ?>
+
+    </form>
+
+</main>
